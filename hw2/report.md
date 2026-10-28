@@ -14,7 +14,7 @@
 
 ---
 
-### 1-1. 公開介面 (Public Interface - Figure 1)
+### 1-1. 多項式運算(Figure 1)
 
 <img width="1422" height="1022" alt="image" src="https://github.com/user-attachments/assets/2d6e09ed-ab13-4640-89e7-069be292a1a1" />
 
@@ -28,7 +28,7 @@
 
 ---
 
-### 1-2. 私有成員 (Private Data Members - Figure 2)
+### 1-2. 運算子實作 (Figure 2)
 
 <img width="1422" height="1022" alt="image" src="https://github.com/user-attachments/assets/23dd2fe3-bebe-455a-9e9b-735a17644d6a" />
 
@@ -46,7 +46,7 @@
 
 ## 2. Algorithm Design & Programming 
 
-### 2.1  公開介面 (Public Interface - Figure 1) 程式碼實作:
+### 2.1   多項式運算(Figure 1) 程式碼實作:
 
 ```cpp
 #include <iostream>
@@ -212,3 +212,11 @@ int main() {
 
     return 0;
 }
+
+### 2.2  運算子實作(Figure 2) 程式碼實作:
+       需要加進類別內的宣告:
+              ```cpp
+              friend istream& operator>>(istream& is, Polynomial& p);
+              friend ostream& operator<<(ostream& os, const Polynomial& p);
+      將這兩行放入 Term 與 Polynomial 的 class 宣告裡面（因為它們需要存取私有變數）
+     
