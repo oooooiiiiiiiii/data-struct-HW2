@@ -213,11 +213,53 @@ int main() {
     return 0;
 }
 ```
-### 2.2  運算子實作(Figure 2) 程式碼實作:
+### 2.2 運算子實作(Figure 2) 程式碼實作:
 需要加進類別內的宣告:
-      
-              ```cpp
-              friend istream& operator>>(istream& is, Polynomial& p);
-              friend ostream& operator<<(ostream& os, const Polynomial& p);
-      將這兩行放入 Term 與 Polynomial 的 class 宣告裡面（因為它們需要存取私有變數）
-     
+
+```cpp
+friend istream& operator>>(istream& is, Polynomial& p);
+friend ostream& operator<<(ostream& os, const Polynomial& p);
+```
+
+2. 運算子的獨立實作 (放在 class 外面)：
+這段程式碼取代了上面為了測試而寫的 Print() 和 SetTerm() 的輸入功能
+
+```cpp
+// 多載輸入運算子
+istream& operator>>(istream& is, Polynomial& p) {
+    p.terms = 0; // 清空原本內容
+    int inputTerms;
+    cout << "總共有幾項: ";
+    is >> inputTerms;
+    
+    cout << "請依序輸入每項的 [係數] 與 [指數] (中間以空白隔開):\n";
+    for (int i = 0; i < inputTerms; i++) {
+        float c;
+        int e;
+        is >> c >> e;
+        if (c != 0.0) {
+            // 利用現有的 SetTerm 把資料存進陣列
+            p.SetTerm(c, e); 
+        }
+    }
+    return is;
+}
+
+// 多載輸出運算子
+ostream& operator<<(ostream& os, const Polynomial& p) {
+    if (p.terms == 0) {
+        os << "0";
+        return os;
+    }
+    for (int i = 0; i < p.terms; i++) {
+        if (i > 0 && p.termArray[i].coef > 0) {
+            os << " + ";
+        }
+        os << p.termArray[i].coef;
+        if (p.termArray[i].exp > 0) {
+            os << "x^" << p.termArray[i].exp;
+        }
+    }
+    return os;
+}
+
