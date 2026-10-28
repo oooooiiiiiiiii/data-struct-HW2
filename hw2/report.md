@@ -214,7 +214,9 @@ int main() {
 }
 ```
 ### 2.2  運算子實作(Figure 2) 程式碼實作:
+'
        需要加進類別內的宣告:
+       
               ```cpp
               friend istream& operator>>(istream& is, Polynomial& p);
               friend ostream& operator<<(ostream& os, const Polynomial& p);
