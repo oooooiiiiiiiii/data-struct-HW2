@@ -16,7 +16,8 @@
 
 ### 1-1. 公開介面 (Public Interface - Figure 1)
 
-         <img width="1696" height="976" alt="image" src="https://github.com/user-attachments/assets/dff53d8d-286e-4d51-a8e5-2a503063b177" />
+<img width="1422" height="1022" alt="image" src="https://github.com/user-attachments/assets/2d6e09ed-ab13-4640-89e7-069be292a1a1" />
+
 
 
 根據 Figure 1 的 ADT 定義，需要實作以下公開成員函式：
@@ -29,7 +30,8 @@
 
 ### 1-2. 私有成員 (Private Data Members - Figure 2)
 
-       <img width="1422" height="1022" alt="image" src="https://github.com/user-attachments/assets/c71d2e19-92df-4cfc-b8a3-6b57611ec024" />
+<img width="1422" height="1022" alt="image" src="https://github.com/user-attachments/assets/23dd2fe3-bebe-455a-9e9b-735a17644d6a" />
+
 
 
 根據 Figure 2 的定義，資料結構的設計如下：
