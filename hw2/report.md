@@ -42,3 +42,5 @@
   * `termArray` (Term*)：指向非零項陣列的指標。
   * `capacity` (int)：`termArray` 的最大容量。
   * `terms` (int)：目前多項式中非零項的數量。
+
+    
