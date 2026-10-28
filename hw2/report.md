@@ -43,4 +43,6 @@
   * `capacity` (int)：`termArray` 的最大容量。
   * `terms` (int)：目前多項式中非零項的數量。
 
+
+### 2. Algorithm Design & Programming 
     
