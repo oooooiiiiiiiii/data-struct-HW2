@@ -16,21 +16,26 @@
 
 ### 1-1. 多項式運算(公開介面與抽象資料型態)(Figure 1)
 
-<img width="1422" height="1022" alt="image" src="https://github.com/user-attachments/assets/2d6e09ed-ab13-4640-89e7-069be292a1a1" />
+<img width="518" height="350" alt="image" src="https://github.com/user-attachments/assets/a72abd3a-a629-4eb2-991c-c9306c809977" />
+
 
 * **定義 Polynomial 類別 多項式在數學上表示為一組有序對<c,e> c代表項的係數 e表示項的次方數**
      * **實作無參數建構子 Polynomial() 初始化一個p(x)=0 的多項式  實作多項式相加Add()
      相乘Mult() 以及把數值帶入多項式的結果Eval()**
 ---
 
-### 1-2. 運算子實作 (Figure 2)
+### 1-2. 運算子實作(私有資料成員與內部實作)(Figure 2)
 
 <img width="1422" height="1022" alt="image" src="https://github.com/user-attachments/assets/23dd2fe3-bebe-455a-9e9b-735a17644d6a" />
 
 
 
+* **宣告Term(項) 其內部包含兩個私有成員 float coef(係數) int exp(次方)**
+* **同時透過 friend 將Polynomial 類別宣告為朋友類別 允許Polynomial直接存取這些私有資料**
+* **Polynomial 類別的私有成員中 須宣告一指標termArray 該指標指向由 Term 物件所構成的陣列**
+* **用於儲存多項式中的所有非零項**
 
-
+---
 ## 2. Algorithm Design & Programming 
 
 ### 2.1   多項式運算(Figure 1) 程式碼實作:
