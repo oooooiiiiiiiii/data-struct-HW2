@@ -37,6 +37,11 @@
     用於儲存多項式中的所有非零項**
 
 ---
+### 1-3.Figure 1 與 Figure 2 結合後的題目說明（對應 Problem 1 與 Problem 2）
+   
+* **把Figure 2的Term 類別的功能加到Figure 1 中可進行多項式運算**
+---
+
 ## 2. Algorithm Design & Programming 
 
 ### 2.1   多項式運算(Figure 1) 程式碼實作:
