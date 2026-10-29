@@ -16,13 +16,12 @@
 
 ### 1-1. 多項式運算(公開介面與抽象資料型態)(Figure 1)
 
-<img width="518" height="350" alt="image" src="https://github.com/user-attachments/assets/a72abd3a-a629-4eb2-991c-c9306c809977" />
-
+<img width="1098" height="749" alt="image" src="https://github.com/user-attachments/assets/eb39da1b-8f88-4c3c-9c08-8af03468588e" />
 
 
 
 * **定義 Polynomial 類別 多項式在數學上表示為一組有序對<c,e> c代表項的係數 e表示項的次方數**
-* * **實作無參數建構子 Polynomial() 初始化一個p(x)=0 的多項式  實作多項式相加Add()
+* **實作無參數建構子 Polynomial() 初始化一個p(x)=0 的多項式  實作多項式相加Add()
      相乘Mult() 以及把數值帶入多項式的結果Eval()**
 ---
 
