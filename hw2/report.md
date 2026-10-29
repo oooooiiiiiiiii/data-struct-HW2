@@ -9,8 +9,8 @@
    <img width="1554" height="778" alt="image" src="https://github.com/user-attachments/assets/a7734b33-bfb4-491c-9443-f6148c929429" />
 
 
-* **核心任務**：實作 `Polynomial` 類別，其抽象資料型別 (ADT) 與私有資料成員分別定義於 Figure 1 與 Figure 2。
-* **運算子多載**：撰寫 C++ 函式來處理多項式的輸入與輸出（依照 Figure 2 的資料表示方式），必須多載 `<<` 與 `>>` 運算子。
+  
+     
 
 ---
 
@@ -18,13 +18,9 @@
 
 <img width="1422" height="1022" alt="image" src="https://github.com/user-attachments/assets/2d6e09ed-ab13-4640-89e7-069be292a1a1" />
 
-
-   題目要求: 
-     * **定義 Polynomial 類別 多項式在數學上
-     表示為一組有序對<c,e> c代表項的係數 e表示項的次方數**
+* **定義 Polynomial 類別 多項式在數學上表示為一組有序對<c,e> c代表項的係數 e表示項的次方數**
      * **實作無參數建構子 Polynomial() 初始化一個p(x)=0 的多項式  實作多項式相加Add()
      相乘Mult() 以及把數值帶入多項式的結果Eval()**
-
 ---
 
 ### 1-2. 運算子實作 (Figure 2)
@@ -33,14 +29,6 @@
 
 
 
-根據 Figure 2 的定義，資料結構的設計如下：
-* **`Term` 類別**：用來表示多項式中的每一個非零項。
-  * `coef` (float)：係數 (coefficient)。
-  * `exp` (int)：指數 (exponent)。
-* **`Polynomial` 私有成員**：
-  * `termArray` (Term*)：指向非零項陣列的指標。
-  * `capacity` (int)：`termArray` 的最大容量。
-  * `terms` (int)：目前多項式中非零項的數量。
 
 
 ## 2. Algorithm Design & Programming 
