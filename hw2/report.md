@@ -14,17 +14,16 @@
 
 ---
 
-### 1-1. 多項式運算(Figure 1)
+### 1-1. 多項式運算(公開介面與抽象資料型態)(Figure 1)
 
 <img width="1422" height="1022" alt="image" src="https://github.com/user-attachments/assets/2d6e09ed-ab13-4640-89e7-069be292a1a1" />
 
 
-
-根據 Figure 1 的 ADT 定義，需要實作以下公開成員函式：
-* `Polynomial()`：建構子，用來初始化一個空的多項式 p(x) = 0。
-* `Polynomial Add(Polynomial poly)`：執行多項式加法，回傳 `*this` 與 `poly` 相加的結果。
-* `Polynomial Mult(Polynomial poly)`：執行多項式乘法，回傳 `*this` 與 `poly` 相乘的結果。
-* `float Eval(float f)`：計算多項式在代入數值 `f` 後的運算結果並回傳。
+   題目要求: 
+     * **定義 Polynomial 類別 多項式在數學上
+     表示為一組有序對<c,e> c代表項的係數 e表示項的次方數**
+     * **實作無參數建構子 Polynomial() 初始化一個p(x)=0 的多項式  實作多項式相加Add()
+     相乘Mult() 以及把數值帶入多項式的結果Eval()**
 
 ---
 
@@ -53,7 +52,7 @@
 #include <cmath> // 給 Eval 的 pow() 使用
 using namespace std;
 
-class Polynomial; // 前置宣告
+class Polynomial; // 前置宣告 
 
 // 依照 Figure 2 實作 Term 類別
 class Term {
@@ -262,4 +261,8 @@ ostream& operator<<(ostream& os, const Polynomial& p) {
     }
     return os;
 }
-
+```
+### 2.3 將Figure2 的實作方式加入到 Figure1 
+  ```cpp
+  
+ 
