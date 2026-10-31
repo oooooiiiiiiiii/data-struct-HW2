@@ -49,8 +49,9 @@
 
 ### 將Figure2 + Figure1 的程式碼 
   ```cpp
-  #include<iostream>  
-#include<cmath> //要在Eval() 中使用pow() 
+#include<iostream>  
+#include<cstdlib> 
+#include<cmath> //要在Eval() 中使用pow()  
 using namespace std;
 
  //先宣告Polynimial 先告速編譯器 有這個類別 因為等下  定義 Term 類別 說明Polynomial 是Term 朋友
@@ -64,7 +65,7 @@ class Term{
      friend class Polynomial; 
      //在這裡使用istream ostream 是因為 如果你使用 cin>>Term type  cout<<Term type 編譯器沒看過這各類別
      friend istream& operator>>(istream& is,Polynomial& p);  
-     friend ostream& operator<<(istream& os,const Polynomial& p);
+     friend ostream& operator<<(ostream& os,const Polynomial& p);
 
    private:
 
@@ -106,7 +107,7 @@ class Polynomial{
      friend ostream& operator<<(ostream& os,const Polynomial& p);    
 
 
-}
+};
 
 //實作函式成員
 
@@ -154,7 +155,7 @@ void Polynomial::SetTerm(float c,int e){
 
     if(terms==capacity){  //一旦項數數量已經跟容量一樣 就乘2
       capacity*=2;
-      Terms* temp=new Term[capacity];
+      Term* temp=new Term[capacity];
 
             for(int  i=0;i<terms;i++){
                 temp[i]=termArray[i];  //轉移原有資料
@@ -201,7 +202,7 @@ Polynomial Polynomial::Add(Polynomial poly){
         else{
             // 傳入項指數較大 直接加入結果陣列
             result.SetTerm(poly.termArray[b].coef,poly.termArray[b].exp);
-            b++
+            b++;
         }
     }
 
@@ -212,7 +213,7 @@ Polynomial Polynomial::Add(Polynomial poly){
         }
         while(b<poly.terms){
              result.SetTerm(poly.termArray[b].coef,poly.termArray[b].exp);
-            b++
+            b++;
         }
             
     
@@ -318,32 +319,40 @@ ostream& operator<<(ostream& os,const Polynomial& p){
 
 }
 
-int main(void) {
-    Polynomial p1, p2, p3;
-    float x;
+
+
+int main(void){
+
+     system("chcp 65001"); //設定編碼為UTF-8
+
+     Polynomial p1,p2,p3;
+     float x;
+
      
-    cout << "--- 請輸入多項式 p1 ---\n";
-    cin >> p1; 
+    cout << "--- 設定多項式 p1 ---\n";
+    cin >> p1;
     
-    cout << "\n--- 請輸入多項式 p2 ---\n";
-    cin >> p2; 
+    cout << "\n--- 設定多項式 p2 ---\n";
+    cin >> p2;
 
     cout << "\n[輸入確認]\n";
     cout << "p1(x) = " << p1 << "\n"; 
     cout << "p2(x) = " << p2 << "\n";
 
-    p3 = p1.Add(p2); 
+    p3 = p1.Add(p2);
     cout << "\n p1 + p2 = " << p3 << "\n";
 
-    p3 = p1.Mult(p2); 
-    cout << " p1 * p2 = " << p3 << "\n";
+    p3 = p1.Mult(p2);
+    cout << "p1 * p2 = " << p3 << "\n";
 
     cout << "\n輸入要代入 p1 的數值 x: ";
     cin >> x;
-    cout << "p1(" << x << ") = " << p1.Eval(x) << "\n"; 
+    cout << "p1(" << x << ") = " << p1.Eval(x) << "\n";
 
-    return 0; 
+    return 0;
+
 }
+
 ```
 ---
 ## 4.效能分析
