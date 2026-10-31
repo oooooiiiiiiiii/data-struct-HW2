@@ -7,7 +7,7 @@
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/9a071802-48ee-4c26-9930-ebe252669fb9" />
 
 
-**實作多項式（Polynomial）類別，除了加法 乘法 代入數值(figure1)，還需透過運算子多載自訂輸入與輸出(figure2)**
+**實作多項式（Polynomial）類別 除了加法 乘法 代入數值(figure1) 還要用運算子多載自訂輸入與輸出(figure2)**
 
 ---
 
@@ -41,7 +41,7 @@
 
 **2.加法部分 次方大的先存，一樣大就相加 乘法部分用兩層迴圈乘開 再呼叫加法合併**
 
-**3.用friend 改寫輸入輸出 讓程式可以直接用 cin 連續吃測資用 cout 自己判斷加號跟次方的排版印出來**
+**3.用friend 改寫輸入輸出 讓程式可以直接用 cin 連續輸入  讓cout 自己判斷加號跟次方的排版印出來**
 
 ---
 
@@ -363,4 +363,6 @@ int main(void) {
 | 測試三(零多項式處理)|p1:0 p2:2 5 1 2 0 x=1| 加:5x+2 乘:0 p1(1):0|加:5x+2 乘:0 p1(1):0|
 | 測試四(當係數為零) |p1:2 0 3 4 2 p2:1 3 2 x=2| 加:7x^2 乘:12x^4 p1(2):16|加:7x^2 乘:12x^4 p1(2):16|
 
- ###
+ ### 編譯與執行指令:
+ <img width="400" alt="image" src="https://github.com/user-attachments/assets/d5492424-680c-4141-af20-7dcf042f95f4" />
+
