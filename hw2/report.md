@@ -375,4 +375,7 @@ int main(void){
  ### 編譯與執行指令:
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/723e77c4-b0c8-4d42-89ca-65609bf41f8e" />
 
+---
+## 6.效能量測:
 
+ 
