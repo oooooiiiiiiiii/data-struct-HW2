@@ -364,5 +364,6 @@ int main(void) {
 | 測試四(當係數為零) |p1:2 0 3 4 2 p2:1 3 2 x=2| 加:7x^2 乘:12x^4 p1(2):16|加:7x^2 乘:12x^4 p1(2):16|
 
  ### 編譯與執行指令:
- <img width="400" alt="image" src="https://github.com/user-attachments/assets/d5492424-680c-4141-af20-7dcf042f95f4" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/723e77c4-b0c8-4d42-89ca-65609bf41f8e" />
+
 
