@@ -1,4 +1,7 @@
-# HW2: Polynomial Class
+#41443124
+---
+## HW2: Polynomial Class
+---
 
 ## 1.解題說明
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/9a071802-48ee-4c26-9930-ebe252669fb9" />
@@ -14,7 +17,7 @@
 
 
 
-** 定義 Polynomial 類別 多項式在數學上表示為一組有序對<c,e> c代表項的係數 e表示項的次方數**
+**定義 Polynomial 類別 多項式在數學上表示為一組有序對<c,e> c是係數 e是次方**
 **實作無參數建構子 Polynomial() 初始化一個p(x)=0 的多項式  實作多項式相加Add()
      相乘Mult() 以及把數值帶入多項式的結果Eval()**
      
@@ -32,9 +35,19 @@
 
 ---
 
-## 2. Algorithm Design & Programming 
+## 2.解題策略
 
-### 將Figure2 的實作方式加入到 Figure1 
+**1.用動態陣列去存係數和次方 滿了就會自動讓空間大小乘2**
+
+**2.加法部分 次方大的先存，一樣大就相加 乘法部分用兩層迴圈乘開 再呼叫加法合併**
+
+**3.用friend 改寫輸入輸出 讓程式可以直接用 cin 連續吃測資用 cout 自己判斷加號跟次方的排版印出來**
+
+---
+
+## 3. Algorithm Design & Programming 
+
+### 將Figure2 + Figure1 的程式碼 
   ```cpp
   #include<iostream>  
 #include<cmath> //要在Eval() 中使用pow() 
@@ -304,6 +317,50 @@ ostream& operator<<(ostream& os,const Polynomial& p){
     return os;  //回傳os 以支援連續輸出(ex: cout<<p1<<p2)
 
 }
+
+int main(void) {
+    Polynomial p1, p2, p3;
+    float x;
+     
+    cout << "--- 請輸入多項式 p1 ---\n";
+    cin >> p1; 
+    
+    cout << "\n--- 請輸入多項式 p2 ---\n";
+    cin >> p2; 
+
+    cout << "\n[輸入確認]\n";
+    cout << "p1(x) = " << p1 << "\n"; 
+    cout << "p2(x) = " << p2 << "\n";
+
+    p3 = p1.Add(p2); 
+    cout << "\n p1 + p2 = " << p3 << "\n";
+
+    p3 = p1.Mult(p2); 
+    cout << " p1 * p2 = " << p3 << "\n";
+
+    cout << "\n輸入要代入 p1 的數值 x: ";
+    cin >> x;
+    cout << "p1(" << x << ") = " << p1.Eval(x) << "\n"; 
+
+    return 0; 
+}
 ```
 ---
- 
+## 4.效能分析
+**假設多項式p1有N項 多項式p2有M項**
+
+ * **時間複雜度**:O(N^2 \times M)
+ * **空間複雜度**:O(N \times M)
+---
+## 5.測試與驗證
+
+   ### 測試案例:
+
+| 測試案例 | 輸入參數 | 預期輸出 | 實際輸出 |
+|----------|--------------|----------|----------|
+| 測試一(普通)|p1:2 3 2 2 1 p2:2 1 2 5 0 x=1| 加:4x^2 + 2x^1 + 5 乘:3x^4 + 2x^3 + 15x^2 + 10x^1 p1(2):16|加:4x^2 + 2x^1 + 5 乘:3x^4 + 2x^3 + 15x^2 + 10x^1 p1(2):16|
+| 測試二(負數與次方抵銷)|p1:2 2 2 3 1 p2:2 -2 2 4 0 x=1| 加:3x^1 + 4 乘:-4x^4 - 6x^3 + 8x^2 + 12x^1 p1(1):5|加:3x^1 + 4 乘:-4x^4 - 6x^3 + 8x^2 + 12x^1 p1(1):5|
+| 測試三(零多項式處理)|p1:0 p2:2 5 1 2 0 x=1| 加:5x+2 乘:0 p1(1):0|加:5x+2 乘:0 p1(1):0|
+| 測試四(當係數為零) |p1:2 0 3 4 2 p2:1 3 2 x=2| 加:7x^2 乘:12x^4 p1(2):16|加:7x^2 乘:12x^4 p1(2):16|
+
+ ###
